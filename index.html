@@ -16,6 +16,9 @@
             background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         
         .container {
@@ -44,6 +47,7 @@
         
         .services-section {
             padding: 3rem 0;
+            flex: 1;
         }
         
         .section-title {
@@ -119,11 +123,38 @@
             color: white;
             text-align: center;
             padding: 2rem 0;
-            margin-top: 2rem;
+            margin-top: auto;
+            width: 100%;
         }
         
         .contact-info {
             margin-top: 1rem;
+        }
+        
+        /* Force white color for all text in footer */
+        footer,
+        footer *:not(a) {
+            color: white !important;
+        }
+        
+        /* Specifically target phone numbers and emails */
+        .phone-number,
+        .email-address {
+            color: white !important;
+            text-decoration: none !important;
+        }
+        
+        /* Prevent any link styling in footer */
+        footer a {
+            color: white !important;
+            text-decoration: none !important;
+        }
+        
+        /* Additional protection against browser auto-styling */
+        footer [href^="tel"],
+        footer [href^="mailto"] {
+            color: white !important;
+            text-decoration: none !important;
         }
         
         @media (max-width: 768px) {
@@ -143,20 +174,20 @@
     
     <section class="services-section">
         <div class="container">
-            <h2 class="section-title">Our Medical services</h2>
+            <h2 class="section-title">Our Medical Services</h2>
             
             <div class="services-grid">
                 <!-- Medical Services Card -->
                 <div class="service-card">
                     <div class="service-header">
-                        <h3 class="service-title">Mobile blood draw</h3>
+                        <h3 class="service-title">Mobile Blood Draw</h3>
                         <div class="service-price">$150</div>
                     </div>
                     <div class="service-content">
                         <p class="service-description">
-                            Reliable ,conveninent,and professional mobile draw services brought directly to your home or office. As a registered nurse with years of clinical and home health experience and certified  
-                            phlebotomist,we provide safe and accurate phlebotomy in a comfortable setting-no waiting rooms,no hassle . Whether you need routine labs,speciality testing ,or physician-ordered blood work,
-                            we ensure a stress-free experience with the highest standards of care and compassion
+                            Reliable, convenient, and professional mobile draw services brought directly to your home or office. As a registered nurse with years of clinical and home health experience and certified  
+                            phlebotomist, we provide safe and accurate phlebotomy in a comfortable setting—no waiting rooms, no hassle. Whether you need routine labs, specialty testing, or physician-ordered blood work,
+                            we ensure a stress-free experience with the highest standards of care and compassion.
                         </p>
                         <button class="btn more-info-btn" data-service="medical">More Info</button>
                     </div>
@@ -172,7 +203,8 @@
                         <p class="service-description">
                             Professional nursing care in the comfort of your home. Our mobile 
                             nursing services include medication administration, wound care, 
-                            health monitoring, and personalized care plans.
+                            health monitoring, and personalized care plans. Our experienced
+                            nurses provide compassionate care tailored to your specific needs.
                         </p>
                         <button class="btn more-info-btn" data-service="nursing">More Info</button>
                     </div>
@@ -189,6 +221,8 @@
                             Ongoing, comprehensive healthcare for individuals and families. 
                             Our primary care services focus on prevention, wellness, and 
                             management of chronic conditions with personalized attention.
+                            Build a lasting relationship with a healthcare provider who
+                            knows you and your health history.
                         </p>
                         <button class="btn more-info-btn" data-service="primary">More Info</button>
                     </div>
@@ -201,7 +235,7 @@
         <div class="container">
             <p>© 2025 Vitusla Medical Services. All rights reserved.</p>
             <div class="contact-info">
-                <p>Contact us: vitusio@yahooo.com | (747) 300-8050</p>
+                <p>Contact us: <span class="email-address">vitusio@yahoo.com</span> | <span class="phone-number">(747) 300-8050</span></p>
             </div>
         </div>
     </footer>
@@ -215,13 +249,13 @@
                 
                 switch(service) {
                     case 'medical':
-                        message = 'Our Medical Services include comprehensive health assessments, diagnostic testing, treatment plans, and specialist referrals. All services are provided by board-certified physicians.';
+                        message = 'Our Mobile Blood Draw service provides convenient at-home or office phlebotomy services. We handle routine labs, specialty testing, and all physician-ordered blood work with the highest standards of safety and accuracy.';
                         break;
                     case 'nursing':
-                        message = 'Mobile Nursing Services bring professional healthcare to your location. Services include wound care, medication management, IV therapy, patient education, and post-operative care.';
+                        message = 'Mobile Nursing Services bring professional healthcare to your location. Services include wound care, medication management, IV therapy, patient education, and post-operative care. All services provided by experienced, licensed nurses.';
                         break;
                     case 'primary':
-                        message = 'Primary Care services focus on long-term health relationships. We provide annual check-ups, chronic disease management, preventive care, vaccinations, and health counseling.';
+                        message = 'Primary Care services focus on long-term health relationships. We provide annual check-ups, chronic disease management, preventive care, vaccinations, and health counseling. Contact us for personalized pricing based on your needs.';
                         break;
                 }
                 
